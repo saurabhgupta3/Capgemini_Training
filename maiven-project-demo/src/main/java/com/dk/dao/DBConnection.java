@@ -11,7 +11,7 @@ public class DBConnection {
 		
 		MysqlDataSource ds = new MysqlDataSource();
 		ds.setUser("root");
-		ds.setPassword("*2lM(1y3^4ss");
+		ds.setPassword(System.getenv("DB_PASSWORD"));
 		ds.setUrl("jdbc:mysql://localhost:3306/company_db");
 		
 		try {
