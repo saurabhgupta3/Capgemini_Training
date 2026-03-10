@@ -1,0 +1,5 @@
+D:\code\java\Capgemini_Training\hibernate-supply-mess\src\main\java\com\assess\EntityManagerFactoryProvider.java
+D:\code\java\Capgemini_Training\hibernate-supply-mess\src\main\java\com\assess\Main.java
+D:\code\java\Capgemini_Training\hibernate-supply-mess\src\main\java\com\assess\model\Item.java
+D:\code\java\Capgemini_Training\hibernate-supply-mess\src\main\java\com\assess\model\Supplier.java
+D:\code\java\Capgemini_Training\hibernate-supply-mess\src\main\java\com\assess\model\Supply.java
