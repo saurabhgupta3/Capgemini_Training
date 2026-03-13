@@ -3,9 +3,11 @@ package com.gal;
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.gal.algo.Calc;
 import com.gal.algo.PasswordEncrypter;
+import com.gal.algo.UserVerifier;
 
 public class MainBeans {
 	public static void main(String[] args) {
@@ -21,7 +23,9 @@ public class MainBeans {
 		System.out.println(bean.hash("hello"));
 		
 		StringBuilder bean3 = context.getBean(StringBuilder.class);
+		StringBuilder bean9 = context.getBean(StringBuilder.class);
 		System.out.println(bean3);
+		System.out.println(bean9);
 		
 		
 		Calc bean4 = context.getBean(Calc.class);
@@ -37,6 +41,15 @@ public class MainBeans {
 		Object bean6 = context.getBean("getCalc");
 		//create an object of dataSource and inject into the spring context
 		DataSource bean7 = context.getBean(DataSource.class);
+		
+		
+		ClassPathXmlApplicationContext xmlContext = new ClassPathXmlApplicationContext("beans.xml");
+		xmlContext.refresh();
+		StringBuilder bean10 = xmlContext.getBean(StringBuilder.class);
+		System.out.println(bean10);
+		UserVerifier userVerifier = context.getBean(UserVerifier.class);
+		userVerifier.verifyUser();
+		context.close();
 		
 	}
 }
