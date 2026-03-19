@@ -1,5 +1,7 @@
 package com.gal.model;
 
+import java.sql.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -15,6 +17,17 @@ public class Department {
 	
 	@Column(name="manager_id")
 	int managerid;
+	
+	@Column(name="establishdate")
+	Date establishdate;
+
+	public Date getEstablishdate() {
+		return establishdate;
+	}
+
+	public void setEstablishdate(Date establishdate) {
+		this.establishdate = establishdate;
+	}
 
 	public int getDepartmentid() {
 		return departmentid;

@@ -8,7 +8,7 @@ import com.gal.model.Training;
 import com.gal.service.TrainingService;
 
 @RestController
-@RequestMapping("/trainings")
+@RequestMapping("/trainings/{name}")
 public class TrainingController {
 
     @Autowired
@@ -20,11 +20,11 @@ public class TrainingController {
     }
 
     @GetMapping(params="name")
-    public List<Training> search(@RequestParam String name){
+    public List<Training> search(@PathVariable("name") String name){
         return service.searchTopic(name);
     }
 
-    @GetMapping("/upcoming")
+    @GetMapping("trainings/upcoming")
     public List<Training> upcoming(@RequestParam String name){
         return service.upcomingTraining(name);
     }
