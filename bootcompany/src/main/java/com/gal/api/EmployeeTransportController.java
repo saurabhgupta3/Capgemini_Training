@@ -50,4 +50,11 @@ public class EmployeeTransportController {
 		log.debug("request for adding employee" + emp);
 		return service.updateEmployee(emp);
 	}
+	@GetMapping("/employee/{cabId}/{date}")
+	public List<Employee> getEmployees(
+	        @PathVariable int cabId,
+	        @PathVariable String date) {
+
+		 return service.getEmployeesByCabAndDate(cabId, date);
+	}
 }

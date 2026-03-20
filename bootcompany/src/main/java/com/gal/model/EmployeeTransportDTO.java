@@ -19,7 +19,7 @@ public class EmployeeTransportDTO {
 		this.lName = lName;
 	}
 	public String getEmail() {
-		return email;
+		return email;	
 	}
 	public void setEmail(String email) {
 		this.email = email;

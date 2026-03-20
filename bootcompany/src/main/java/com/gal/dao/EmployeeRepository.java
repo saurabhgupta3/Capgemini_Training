@@ -1,5 +1,7 @@
 package com.gal.dao;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -15,5 +17,8 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer>{
 	
 	@Query("SELECT e from Employee e where e.fName = :name")
 	Employee getEmployeeByName(@Param("name") String name);
+	
+	@Query("select e from Employee e where e.cab.cabId = :cabId")
+	List<Employee> getEmployeesByCabAndDate(@Param("cabId") int cabId, @Param("date") String date);
 	
 }

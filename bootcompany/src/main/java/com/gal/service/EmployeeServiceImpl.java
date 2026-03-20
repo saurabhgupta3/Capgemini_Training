@@ -1,5 +1,6 @@
 package com.gal.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -33,5 +34,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 			throw new RuntimeException("Department  not found");
 		}
 		return repo.save(emp);
+	}
+	public List<Employee> getEmployeesByCabAndDate(int cabId, String date) {
+		return repo.getEmployeesByCabAndDate(cabId, date);
 	}
 }

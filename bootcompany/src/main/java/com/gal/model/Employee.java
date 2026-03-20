@@ -5,6 +5,8 @@ import java.sql.Date;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Employee {
@@ -31,6 +33,16 @@ public class Employee {
 	Integer depid;
 	@Column(name="address")
 	String address;
+	@ManyToOne
+	@JoinColumn(name = "cab_id")
+	private Cab cab;
+	public Cab getCab() {
+	    return cab;
+	}
+
+	public void setCab(Cab cab) {
+	    this.cab = cab;
+	}
 	public int getEmployeeid() {
 		return employeeid;
 	}
@@ -79,10 +91,10 @@ public class Employee {
 	public void setSal(int sal) {
 		this.sal = sal;
 	}
-	public int getMid() {
+	public Integer getMid() {
 		return mid;
 	}
-	public void setMid(int mid) {
+	public void setMid(Integer mid) {
 		this.mid = mid;
 	}
 	public int getDepid() {
