@@ -15,7 +15,7 @@ import com.gal.model.Department;
 public class DepartmentServiceImpl implements DepartmentService {
 	
 	
-	private static final Logger log = LoggerFactory.getLogger(DepartmentController.class);
+	private static final Logger log = LoggerFactory.getLogger(DepartmentServiceImpl.class);
 	
 	@Autowired
 	DepartmentRepository repo;

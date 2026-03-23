@@ -10,5 +10,4 @@ public interface EmployeeService {
 	Employee addEmployee(Employee emp);
 	Employee getEmployeeByName(String name);
 	Employee updateEmployee(Employee emp);
-	List<Employee> getEmployeesByCabAndDate(int cabId, String date);
 }

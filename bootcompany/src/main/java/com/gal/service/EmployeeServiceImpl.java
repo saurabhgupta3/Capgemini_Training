@@ -35,7 +35,4 @@ public class EmployeeServiceImpl implements EmployeeService {
 		}
 		return repo.save(emp);
 	}
-	public List<Employee> getEmployeesByCabAndDate(int cabId, String date) {
-		return repo.getEmployeesByCabAndDate(cabId, date);
-	}
 }

@@ -33,16 +33,6 @@ public class Employee {
 	Integer depid;
 	@Column(name="address")
 	String address;
-	@ManyToOne
-	@JoinColumn(name = "cab_id")
-	private Cab cab;
-	public Cab getCab() {
-	    return cab;
-	}
-
-	public void setCab(Cab cab) {
-	    this.cab = cab;
-	}
 	public int getEmployeeid() {
 		return employeeid;
 	}
