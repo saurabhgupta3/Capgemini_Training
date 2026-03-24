@@ -5,6 +5,7 @@ import java.sql.Date;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotNull;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
@@ -12,6 +13,7 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 public class Department {
 	@Id
 	@Column(name="department_id")
+	@NotNull(message = "depid should not be null")
 	int departmentid;
 	
 	@Column(name="department_name")

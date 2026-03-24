@@ -2,8 +2,6 @@ package com.gal.api;
 
 
 
-import java.sql.Date;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.gal.model.Department;
 import com.gal.service.DepartmentService;
+
+import jakarta.validation.Valid;
 
 @RestController
 public class DepartmentController {
@@ -57,7 +57,7 @@ public class DepartmentController {
 	}
 	@PostMapping(value = "/department", consumes = "application/json", produces = "application/json")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public Department addDepartment(@RequestBody Department dep) {
+	public Department addDepartment(@RequestBody @Valid Department dep) {
 	    log.debug("request for adding department " + dep);
 	    return service.addDepartment(dep);
 	}
